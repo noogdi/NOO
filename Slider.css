@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items:center;
+}
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.wrapper .images{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.wrapper .images .img-1{
+    aspect-ratio: 16/9;
+    height: 100%;
+    width: 100%;
+    background: url("https://static.wixstatic.com/media/2d3f39_03c65617266f47b683eac9270203b233~mv2.jpg") no-repeat;
+    background-size: cover;
+}
+
+.wrapper .images .img-2{
+    position: absolute;
+    aspect-ratio: 16/9;
+    height: 100%;
+    width: 50%;
+    background: url("https://static.wixstatic.com/media/2d3f39_34b5ddadf3a343619443ae10b5303dbd~mv2.jpg") no-repeat;
+    background-size: cover;
+}
+.wrapper .slider{
+    position: absolute;
+    top: -0.5%;
+    width: 100%;
+    z-index: 99;
+}
+
+.wrapper .slider input{
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+.slider input::-webkit-slider-thumb{
+    padding-top: 56.25%;
+    height: 100%;
+    width: 0.5%;
+    background: none;
+    -webkit-appearance: none;
+    cursor: col-resize;
+
+}
+
+.slider .drag-line{
+    width: 0.5%;
+    height: 100%;
+    opacity: 75%;
+    position: absolute;
+    /*background: red;*/
+    left: 50%;
+    pointer-events: none;
+
+}
+
+
+.slider .drag-line::before,
+.slider .drag-line::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 45%;
+    background: white;
+}
+.slider .drag-line::before{
+    top: 0;
+
+}
+.slider .drag-line::after{
+    bottom: 0;
+
+}
+
+.slider .drag-line span{
+    height: 10%;
+    aspect-ratio: 1/1;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) ;
+}
+
+.slider .drag-line span::before,
+.slider .drag-line span::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    border: 10px solid white;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+}
+
+.slider .drag-line span::before{
+    left: 40%;
+    border-left-color: red ;
+
+}
+
+.slider .drag-line span::after{
+    left: 60%;
+    border-top-color: red ;
+    
+}
+
+.slider .drag-line .icon {
+    height: 12.5%;
+    aspect-ratio: 1/1;
+    background:;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%)
+}
+
+.slider .drag-line .icon svg{
+width: 100%;
+height:100%;
+ position: absolute;
+flex-shrink: 0;
+
+}
