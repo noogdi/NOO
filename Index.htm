@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="utf-8">
+
+        <title>Blank template</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css" >
+	<link rel="stylesheet" type="text/css" href="Slider.css" >
+
+    </head>
+
+    <body>
+
+        
+        <!-- Load external JavaScript -->
+        <script src="scripts.js">
+        </script>
+
+        
+        <div class="wrapper">
+        <div class="images">
+            <div class="img-1">
+            </div>
+            <div class="img-2"></div>
+        </div>
+        <div class="slider">
+            <div class="drag-line">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64ZM11.5 32.866C10.8333 32.4811 10.8333 31.5189 11.5 31.134L23.5 24.2057C24.1667 23.8208 25 24.302 25 25.0718V38.9282C25 39.698 24.1667 40.1791 23.5 39.7942L11.5 32.866ZM40.5 24.2058L52.5 31.134C53.1667 31.5189 53.1667 32.4811 52.5 32.866L40.5 39.7942C39.8333 40.1791 39 39.698 39 38.9282V25.0718C39 24.302 39.8333 23.8209 40.5 24.2058Z" fill="white"/>
+</svg></div>
+                </div>  
+            <input type="range" min="0" max="100" value="50">
+        </div>
+        </div>
+    </body>
+
+    <script>
+const slider = document.querySelector(".slider input");
+const img = document.querySelector(".images .img-2");
+const dragLine = document.querySelector(".slider .drag-line");
+
+slider.addEventListener("input", () => {
+  let sliderVal = slider.value;
+  dragLine.style.left = `${sliderVal}%`;
+  img.style.width = `${sliderVal}%`;
+});
+
+    </script>
+
+</html>
